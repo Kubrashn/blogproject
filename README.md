@@ -1,2 +1,2 @@
 # blogproject
-<h1>Merhaba bu projemizin sin hali</h1>
+<h1>Merhaba bu projemizin son hali</h1>
