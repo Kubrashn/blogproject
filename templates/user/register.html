@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% load static  %}
+
+{% block title %}
+   <title>Kayit Ol</title>
+  
+{% endblock title %}
+
+{% block content %}
+  <form action="" method="POST" class="w-50 m-auto border p-4">
+    {% csrf_token %}
+    <label for="">Kullanici Adi</label>
+    <input type="text" name="username" value="{{username}}" id="" class="form-control">
+    <label for="">Email</label>
+    <input type="email" name="email" value="{{email}}" id="" class="form-control">
+    <label for="">Isim</label>
+    <input type="text" name="name" value="{{name}}" id="" class="form-control">
+    <label for="">Soyisim</label>
+    <input type="text" name="surname" value="{{surname}}" id="" class="form-control">
+    <label for="">Sifre</label>
+    <input type="password" name="password1" id="" class="form-control">
+    <label for="">Sifre Onay</label>
+    <input type="password" name="password2" id="" class="form-control">
+    <input type="submit" value="Kayit OL" class="btn btn-primary mt-2">
+  </form>
+{% endblock content %}

@@ -1,0 +1,30 @@
+{% extends "index.html" %}
+{% load static  %}
+{% load humanize %}
+
+{% block title %}
+   <title>Post : {{post.title}}</title>
+{% endblock title %}
+   
+
+{% block content %}
+   
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex">
+                <img src="{{post.image.url}}" alt="" width="100" height="100" class="me-3
+                ">
+                <p>
+                    {{post.owner.name}} {{post.owner.surname|slice:"1"}}
+                    <br>
+                    <small class="text-muted">@{{post.owner.user.username}}</small>
+                </p>
+            </div>
+            <p>{{post.content|safe}}</p>
+            <small class="text-muted">{{post.created_at|naturaltime}}</small>
+
+        </div>
+    </div>
+   
+
+{% endblock content %}

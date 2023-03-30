@@ -1,0 +1,11 @@
+{% extends "index.html" %}
+{% load static  %}
+
+{% block content %}
+  <form action="" enctype="multipart/form-data" method="POST" class="m-auto w-50 border p-4">
+    {% csrf_token %}
+    {{form}}
+    {{profilForm}}
+    <input type="submit" value="">
+  </form>
+{% endblock content %}

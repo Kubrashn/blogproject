@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">NEOSBOOK</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Anasayfa</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="">hgvjhv</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav">
+          {% if user.is_authenticated %}
+             <li class="nav-item">
+              <a href="{% url 'profile' request.user.profile.slug %}" class="nav-link">{{request.user}}</a>
+             </li>
+             <li class="nav-item">
+              <a href="/create/" class="nav-link">Olustur</a>
+             </li>
+             <li class="nav-item">
+              <a href="/user/logout/" class="nav-link">Cikis Yap</a>
+             </li>
+          {% else %}
+            <li class="nav-item">
+              <a href="/user/register/" 
+               {% if request.path == "/user/register/" %}
+               class="nav-link active "
+               {% else %}
+               class="nav-link"
+               {% endif %}
+              >Kayit Ol</a>
+            </li>
+            <li class="nav-item">
+              <a href="/user/login/" 
+              {% if request.path == "/user/login/" %}
+               class="nav-link active"
+               {% else %}
+               class="nav-link"
+               {% endif %}
+              >Giris Yap</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
